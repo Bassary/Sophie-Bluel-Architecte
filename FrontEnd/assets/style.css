@@ -138,65 +138,25 @@ nav a {
 	text-decoration: none;
 	color: black;
 }
-/* 
-form,
-.login-container,
-.connecter-oublie-container,
-.email-input,
-.mdp-input {
+
+.info-erreur-login {
 	display: flex;
-	flex-direction: column;
 	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	background-color: #FFC8C8;
+	margin: 0px 40px 0px 40px;
+	height: 40px;
+	display: none;
 }
 
-.login-container form {
-	gap: 30px;
+#btn-submit {
+	cursor: pointer;
 }
 
-.mdp-input,
-.email-input {
-	align-items: flex-start;
+#btn-submit:hover {
+	opacity: 0.8;
 }
-
-form input:focus {
-	border: solid 1px #B1663C;
-	outline: none;
-}
-
-.mdp-input input,
-.email-input input {
-	background-color:white;
-	border: none;
-	height: 51px;
-	width: 379px;
-	box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.09);
-	margin-top: 5px;
-	padding-left: 10px;
-}
-
-.mdp-oublie,
-.mdp-input,
-.email-input {
-	font-family: 'Work Sans';
-	color: #3D3D3D;
-	font-weight: 500;
-	font-size: 14px;
-}
-
-.login-container {
-	gap: 37px;
-}
-
-.connecter-oublie-container {
-	gap: 28px;
-}
-
-.btn-connecter {
-	background: #1D6154;
-	color: white;
-	border: none;
-	width: 179px;
-} */
 
 .mdp-oublie {
 	text-decoration: underline;
@@ -272,6 +232,10 @@ margin: auto;
 	margin-top:30px;
 	display: flex;
 	flex-direction: column;
+}
+
+#login form {
+	margin-top: 0px;
 }
 
 #contact input, #login input {

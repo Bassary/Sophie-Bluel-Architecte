@@ -26,12 +26,16 @@
     <main>
         <section id="login">
             <h2>Log In</h2>
+            <div class="info-erreur-login">
+                <img src="./assets/icons/mingcute_warning-line.svg" alt="Info : ">
+                <p>Votre email ou votre mot de passe est incorrect</p>
+            </div>
             <form action="#" method="post" id="formulaire-login">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email">
                 <label for="mot-de-passe">Mot de passe</label>
-                <input type="password" name="mot-de-passe" id="mot-de-passe">
-                <input type="submit" value="Se connecter">
+                <input type="password" name="password" id="password">
+                <input type="submit" value="Se connecter" id="btn-submit">
                 <a class="mdp-oublie">Mot de passe oublié</a>
             </form>
             
