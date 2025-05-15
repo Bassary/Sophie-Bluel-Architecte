@@ -12,13 +12,18 @@
 	<script type="module" src="./assets/index.js"></script>
 </head>
 <body>
+	<div class="container-mode-edition user-authentifier">
+		<img class="icon-modif" src="./assets/icons/modif-white.svg" alt="logo modifier">
+		<p>Mode édition</p>
+	</div>
+<section id="body-section-max-width">
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
-			<li>projets</li>
+			<li><a href="index.html">projets</a></li>
 			<li>contact</li>
-			<li><a href="login.html">login</a></li>
+			<li><a class="status" href="login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -38,9 +43,9 @@
 	<section id="portfolio">
 		<div class="container-modif">
 			<h2>Mes Projets</h2>
-			<button id="btn-modif"><img src="./assets/icons/modif.svg" alt="logo modifier">Modifier</button>
+			<button id="btn-modif" class="user-authentifier"><img class="icon-modif" src="./assets/icons/modif-black.svg" alt="logo modifier">Modifier</button>
 		</div>
-		<div class="btn-container">
+		<div class="btn-filtre-container">
 			<button id="btn-tous" class="btn-selected btn-filtre" name="Tous">Tous</button>
 			<button id="btn-objets" class="btn-hover btn-filtre" name="Objets">Objets</button>
 			<button id="btn-appartements" class="btn-hover btn-filtre">Appartement</button>
@@ -72,5 +77,6 @@
 		</ul>
 	</nav>
 </footer>
+</section>
 </body>
 </html>

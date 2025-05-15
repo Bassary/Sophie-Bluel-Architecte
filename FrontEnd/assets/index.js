@@ -1,5 +1,36 @@
-const apiWork = await fetch(`http://localhost:5678/api/works`); // recupération de l'API correspondant au donner dont nous avons besoin "works"
-const works = await apiWork.json(); // traduction des information compris dans la "charge utile" dit body pour pouvoir récupérer nos inforamtion se trouvant dans des objet écrit en json
+// ajout d'un ecouteur d'événement au chargement du DOM. Récupération du localStorage
+// récupération des éléments nécéssaire au different préparation de la page selon l'authentification
+document.addEventListener("DOMContentLoaded", () => {
+  const userAuthentifier = window.localStorage.getItem("user");
+  const status = document.querySelector(".status");
+  let modifElement = document.querySelectorAll(".user-authentifier");
+  const pageContaine = document.getElementById("body-section-max-width");
+
+  if (userAuthentifier) {
+    // condition, si le localStrorage est enregistrer, ajout du CSS corespondant
+    status.textContent = "logout";
+    status.addEventListener("click", () => {
+      window.localStorage.removeItem("user"); // suppression du localStorage depuis le bouton "logout"
+    });
+
+    document.querySelector("body").style.maxWidth = "100vw";
+    document.querySelector(".btn-filtre-container").style.opacity = "0";
+    pageContaine.style.maxWidth = "1140px";
+    pageContaine.style.margin = "auto";
+  } else {
+    // condition si le localeStorage n'est pas enregistrer
+    status.textContent = "login";
+    modifElement.forEach((element) => {
+      element.style.display = "none";
+    });
+  }
+});
+
+// recupération de l'API correspondant au donner dont nous avons besoin "works"
+const apiWork = await fetch(`http://localhost:5678/api/works`);
+const works = await apiWork.json();
+
+// traduction des information compris dans la "charge utile" dit body pour pouvoir récupérer nos inforamtion se trouvant dans des objet écrit en json
 // par la suite nous utiliserons la cariable "works" pour récupérer nos élément dans notre tableaux d'objet. Nous utilison cette variable car nous l'avons traduit en json depuis l'adresse de l'API
 
 // Affichage des image et titre de la gallery ********************

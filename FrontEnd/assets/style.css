@@ -139,8 +139,11 @@ nav a {
 	color: black;
 }
 
+.nav-login {
+	font-weight: 600;
+}
+
 .info-erreur-login {
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 5px;
@@ -167,6 +170,25 @@ nav a {
 	text-decoration: none;
 }
 
+/* container mode édition */
+
+.container-mode-edition {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 59px;
+	color: white;
+	background: black;
+	gap: 6px;
+	width: 100%;
+	margin: 0;
+}
+
+
+.icon-modif {
+	height: 16px;
+}
+
 /* button modifer */
 
 .container-modif {
@@ -176,7 +198,7 @@ nav a {
 }
 
 #btn-modif {
-	display: none;
+	display: flex;
 	align-items: center;
 	border: none;
 	background: none;
@@ -186,9 +208,10 @@ nav a {
 	font-size: 14px;
 }
 
+
 /* button filtre */
 
-.btn-container {
+.btn-filtre-container {
 	display: flex;
 	justify-content: center;
 	gap: 10px;
