@@ -39,55 +39,25 @@ function btnClear() {
 generImages(works); //Appel de la fonction pour récupérer toutes les images
 
 // Bouton filtre de la gallery *******************
+// Fonction générique pour gérer les filtres
+function setupFilterButton(buttonId, categoryName) {
+  const button = document.getElementById(buttonId);
+  button.addEventListener("click", (event) => {
+    btnClear();
+    btnSelected(button, event);
+    const filteredWorks = categoryName
+      ? works.filter((work) => work.category.name === categoryName)
+      : works;
 
-// Flitre: Tous
-const btnFiltreTous = document.getElementById("btn-tous");
-btnFiltreTous.addEventListener("click", (event) => {
-  btnClear();
-  btnSelected(btnFiltreTous, event);
-  const filtreTous = works.filter(function (works) {
-    return works.category.name;
+    document.querySelector(".gallery").innerHTML = "";
+    generImages(filteredWorks);
   });
+}
 
-  document.querySelector(".gallery").innerHTML = "";
-  generImages(filtreTous);
-});
+// Initialisation des boutons de filtre
+setupFilterButton("btn-tous", null);
+setupFilterButton("btn-objets", "Objets");
+setupFilterButton("btn-appartements", "Appartements");
+setupFilterButton("btn-hotels-restaurants", "Hotels & restaurants");
 
-// Flitre: Objets
-const btnFiltreObjet = document.getElementById("btn-objets");
-btnFiltreObjet.addEventListener("click", (event) => {
-  btnClear();
-  btnSelected(btnFiltreObjet, event);
-  const filtreObjet = works.filter(function (works) {
-    return works.category.name === "Objets";
-  });
-
-  document.querySelector(".gallery").innerHTML = "";
-  generImages(filtreObjet);
-});
-
-// Filtre : Appartement
-const btnFiltreAppartement = document.getElementById("btn-appartements");
-btnFiltreAppartement.addEventListener("click", (event) => {
-  btnClear();
-  btnSelected(btnFiltreAppartement, event);
-  const filtreAppartemtent = works.filter(function (works) {
-    return works.category.name === "Appartements";
-  });
-
-  document.querySelector(".gallery").innerHTML = "";
-  generImages(filtreAppartemtent);
-});
-
-// Filtre : Hôtels & restaurants
-const btnFiltreHotelResto = document.getElementById("btn-hotels-restaurants");
-btnFiltreHotelResto.addEventListener("click", (event) => {
-  btnClear();
-  btnSelected(btnFiltreHotelResto, event);
-  const filtreHotelResto = works.filter(function (works) {
-    return works.category.name === "Hotels & restaurants";
-  });
-
-  document.querySelector(".gallery").innerHTML = "";
-  generImages(filtreHotelResto);
-});
+generImages(works); // Appel de la fonction pour récupérer toutes les images

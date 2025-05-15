@@ -1,4 +1,5 @@
 // Création de la fonctinon de login et rédiraction de l'utilisateur
+
 function connexionLogin() {
   // récupération des éléments nécéssaire à la fonction
   const formulaireLogin = document.getElementById("formulaire-login");
@@ -10,9 +11,8 @@ function connexionLogin() {
     //création d'un événement au "submit" cad au moment ou l'utilisateur valide le formulaire
     event.preventDefault(); // fonction qui empêche le changement de URL parce que nous voulons nous même redirigier l'utilisateur plus tard
 
-    // enregistrement du token dans une variable : code nécéssaire qui correspond à la cléf de sécurité de l'autotification de l'utilisateur
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY1MTg3NDkzOSwiZXhwIjoxNjUxOTYxMzM5fQ.JGN1p8YIfR-M-5eQ-Ypy6Ima5cKA4VbfL2xMr2MgHm4";
+    const token = process.env.CLIENT_TOKEN; // enregistrement du token dans une variable : code nécéssaire qui correspond à la cléf de sécurité de l'autotification de l'utilisateur
+
     const chargeUtile = {
       // enregistrement de la "charge utile" qui se trouvera plus tard dans le body de l'objet fletch
       email: inputEmail.value, // valeur de l'input email
