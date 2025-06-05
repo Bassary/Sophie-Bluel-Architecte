@@ -177,7 +177,7 @@ async function BoitModal() {
       const isDeleted = await DeleteImage(work.id);
       if (isDeleted) {
         figure.remove();
-        console.log("Image supprimée avec succès");
+        alert("Image supprimée avec succès");
 
         // Recharge les works depuis l'API pour mettre à jour la galerie principale
         generImages();
@@ -288,7 +288,7 @@ function ajoutImageModal(nouvelleImg, id) {
     const isDeleted = await DeleteImage(id);
     if (isDeleted) {
       figure.remove();
-      console.log("Image supprimée avec succès");
+      alert("Image supprimée avec succès");
 
       // Recharge les works depuis l'API pour mettre à jour la galerie principale
       generImages();
@@ -348,7 +348,7 @@ function AjouterPhoto() {
 
     const inputFile = document.getElementById("image");
     const inputTitle = document.getElementById("title");
-    const selectCat = document.getElementById("category-select").value;
+    const selectCat = document.getElementById("category").value;
     const formData = new FormData();
 
     if (inputFile.files.length === 0) {
