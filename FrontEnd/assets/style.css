@@ -142,13 +142,17 @@ nav a {
 form input, form select, form option {
 	font-family: 'Work Sans';
 	font-weight: 400;
-	font-size: 14px !important;
+	font-size: 14px;
 	color: #444444;
 	padding-left: 10px;
 }
 
 form option {
 	font-family: Arial, Helvetica, sans-serif;
+}
+
+form #title {
+	font-size: 14px !important; 
 }
 
 .nav-login {

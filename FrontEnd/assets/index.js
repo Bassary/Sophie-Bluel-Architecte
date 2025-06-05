@@ -163,7 +163,7 @@ async function BoitModal() {
     image.src = work.imageUrl;
     image.style.height = "102px";
 
-    logo.src = "./assets/icons/ben.svg";
+    logo.src = "FrontEnd/assets/icons/ben.svg";
     logo.classList.add("logo-ben");
 
     figure.id = `work-${work.id}`;
@@ -380,7 +380,7 @@ function AjouterPhoto() {
         .then((response) => response.json())
         .then((data) => {
           console.log("Succes", data);
-          alert("Image ajouter avec succes");
+          alert("Image ajoutée avec succès");
 
           ajoutImageGallery(URL.createObjectURL(image), inputTitle.value);
           ajoutImageModal(URL.createObjectURL(image), data.id);
